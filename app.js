@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const app = express();
+const ejsMate = require("ejs-mate");
 
 // views path for exporting file
 const path = require("path");
@@ -9,6 +10,10 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname, "/public")));
+
+// for styling the app
+app.engine("ejs", ejsMate);
 
 const port = 3000;
 
@@ -16,9 +21,9 @@ const port = 3000;
 const Listing = require("./models/listing.js");
 
 // creating connection to database
-// let MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-let MONGO_URL =
-  "mongodb+srv://site:site@cluster0.idft8qs.mongodb.net/wanderlust?retryWrites=true&w=majority&appName=Cluster0";
+let MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+// let MONGO_URL =
+//   "mongodb+srv://site:site@cluster0.idft8qs.mongodb.net/wanderlust?retryWrites=true&w=majority&appName=Cluster0";
 
 main()
   .then(() => {
