@@ -39,7 +39,7 @@ async function main() {
 
 // Routing
 app.get("/", (req, res) => {
-  res.send("app is working");
+  res.send("app is working ");
 });
 
 //listings routing all the data  // index route also

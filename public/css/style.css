@@ -92,3 +92,20 @@ body {
 .add-btn {
   background-color: #fe424d !important;
 }
+/* edit page */
+.edit-btn {
+  background-color: #fe424d !important;
+}
+
+/* show Page*/
+.show-image {
+  height: 30vh;
+}
+
+.btns {
+  display: flex;
+}
+.show-card {
+  padding-left: 0;
+  padding-right: 0;
+}
